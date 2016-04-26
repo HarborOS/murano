@@ -85,12 +85,12 @@ Methods:
       - $deployment_stderr: $deployment_name + '-stderr'
       - $deployment_stdout: $deployment_name + '-stdout'
       - $injectConfig: $configSection
-      - $configType: OS::Heat::SoftwareConfig
-      - $deploymentType: OS::Heat::SoftwareDeployment
+      - $configType: 'OS::Heat::SoftwareConfig'
+      - $deploymentType: 'OS::Heat::SoftwareDeployment'
       - If: $isStructured
         Then:
-         - $configType: OS::Heat::StructuredConfig
-         - $deploymentType: OS::Heat::StructuredDeployment
+         - $configType: 'OS::Heat::StructuredConfig'
+         - $deploymentType: 'OS::Heat::StructuredDeployment'
          - $injectConfig['completion-signal']: {get_input: deploy_signal_id}
       - $fragment:
           resources:
